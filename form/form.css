@@ -1,0 +1,76 @@
+form {
+    max-width: 450px;
+    margin: 0 auto;
+}
+    
+/* позиционируем*/
+div {
+    position: relative;
+    background: white;
+    border-bottom: 1px solid #ccc;
+}
+
+/* стилизуем лэйбл под плейсхолдер*/
+label {
+  opacity: 0.3;
+  font-weight: bold;
+  position: absolute;
+  top: 22px;
+  left: 20px;
+}
+
+input[type="text"] {
+  width: 100%;
+  border: 0;
+  padding: 20px 20px 20px 50px;
+  background: #eee;
+}
+
+/* выполнено условие required*/
+input[type="text"]:valid {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/check.svg);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 20px 20px;
+}
+      
+input[type="text"]:valid + label {
+    opacity: 0.5;
+}
+
+input[type="text"]:focus {
+    /* задаём стилизацию инпута при фокусе */
+    outline: 0;
+    background: white;
+}
+
+input[type="text"]:focus + label {
+    opacity: 0.5;
+}
+
+/* выполнено условие required */
+input[type="text"]:valid {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/check.svg);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 20px 20px;
+}
+
+input[type="text"]:valid + label {
+    opacity: 0.5;
+}
+  
+/* Когда поле ввода…1. НЕ пустое 2. НЕ в фокусе 3. НЕ валидно */ 
+/*:placeholder-shown представляет любой <input> или <textarea> элемент, который отображает в данный момент текст заполнитель (плейсхолдер).
+/* Выбирает любой элемент с активным плейсхолдером */
+input[type="text"]:invalid:not(:focus):not(:placeholder-shown) {
+     /*показываем напоминание*/
+    background: pink;
+}
+
+input[type="text"]:invalid:not(:focus):not(:placeholder-shown) + label {
+    opacity: 0.5;
+}
+
+/*если нужно запретить растягиваниe textarea*/
+resize: none;
