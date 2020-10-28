@@ -1,1 +1,29 @@
+<picture>
+    <source type="image/webp" media="(min-width: 320px)"
+        srcset="img/cards-mobile@1x.webp 1x, img/cards-mobile@2x.webp 2x">
+    <source type="image/webp" media="(min-width: 768px)"
+        srcset="img/cards-tablet@1x.webp 1x, img/cards-tablet@2x.webp 2x">
+    <source type="image/webp" srcset="img/cards-desktop@1x.webp 1x, img/cards-desktop@2x.webp 2x">
 
+    <!-- 1x: 294px; 2x: 588px-->
+    <source media="(min-width: 320px)" srcset="img/cards-mobile@1x.png 1x, img/cards-mobile@2x.png 2x">
+    <!-- 1x: 465px; 2x: 930px-->
+    <source media="(min-width: 768px)" srcset="img/cards-tablet@1x.png 1x, img/cards-tablet@2x.png 2x">
+
+    <img class="promo__img-cards" src="img/cards-desktop@1x.png" srcset="img/cards-desktop@2x.png 2x" width="705"
+        height="515" alt="Изображение печатных карт">
+</picture>
+
+<style>
+    .about__img {
+        min-width: 174px;
+        height: 317px;
+        background-image: url("../img/2005-desktop@1x.png");
+        background-repeat: no-repeat;
+
+        @media (min-resolution: $retina-dpi), /*retina-dpi: 144dpi; retina-dppx: 1.5dppx;*/
+        (min-resolution: $retina-dppx) {
+            background-image: url("../img/2005-desktop@2x.png") 220px, 317px;
+        }
+    }
+</style>
