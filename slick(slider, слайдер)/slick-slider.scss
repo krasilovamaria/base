@@ -1,4 +1,6 @@
 /*
+Если JQuery не загружена, то сначала перед slick нужно скачать JQuery 
+в vendor.js например и туда же потом скачать slick
 1. Захожу https://kenwheeler.github.io/slick/ нажимаю get it now / download now
 2. В загруженом файле нахожу slick.js и копирую содержимое файла в свой файл,
 где подключаю библиотеки, например в vendor.js
