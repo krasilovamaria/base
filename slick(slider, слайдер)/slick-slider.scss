@@ -1,1 +1,211 @@
+/*
+1. Захожу https://kenwheeler.github.io/slick/ нажимаю get it now / download now
+2. В загруженом файле нахожу slick.js и копирую содержимое файла в свой файл,
+где подключаю библиотеки, например в vendor.js
+3. Захожу в свой проект и в index.html подключаю vendor.js
+4. В index.html где будет мой слайдер соблюдаю структуру один слайд один div
+5. Присваивю класс слайдеру любой, например,comments__slider
+6. В main.js где у меня основной js файл пишу код указанный ниже
+7. В scss файле, где будет оформление comments__slider также пишу оформление 
+самого слайдера .comments__slider .slick-slider (ты можешь посмотреть
+в панели разработчика в comments__slider какие классы присваиваются) 
+9.
+.comments__slider {
+  min-width: 0; // если контейнер flex, то нужно задать min-width: 0
+}
 
+.comments__slider .slick-list {
+  overflow: hidden; // чтобы следующий слайд не видно было
+}
+
+.comments__slider .slick-track {
+  display: flex;
+}
+
+8. здесь хорошо про slick рассказывают https://www.youtube.com/watch?v=rXNfDfqtM3M
+*/
+
+<section class="page-main__comments comments">
+<div class="comments__container">
+  <h2>Отзывы</h2>
+  <div class="comments__slider">
+    <div class="comments__item" tabindex="0">
+      <aside class="comments__slider-item">
+        <img src="img/photo-client-1-desktop@1px.png" alt="Фотография клиента" width="80" height="80">
+        <aside class="comments__wrap">
+          <p class="comments__name">Анна Орлова</p>
+          <p class="comments__text">«Хожу в SuperClub уже больше года. Нравится, что в клубе всегда чисто,
+            тренажеры обновляют, персонал
+            дружелюбный. Зал просторный, даже в вечернее время нет очередей»</p>
+        </aside>
+      </aside>
+    </div>
+    <div class="comments__item" tabindex="0">
+      <aside class="comments__slider-item">
+        <img src="img/photo-client-1-desktop@1px.png" alt="Фотография клиента" width="80" height="80">
+        <aside class="comments__wrap">
+          <p class="comments__name">Анна Орлова</p>
+          <p class="comments__text">«Хожу в SuperClub уже больше года. Нравится, что в клубе всегда чисто,
+            тренажеры обновляют, персонал
+            дружелюбный. Зал просторный, даже в вечернее время нет очередей»</p>
+        </aside>
+      </aside>
+    </div>
+    <div class="comments__item" tabindex="0">
+      <aside class="comments__slider-item">
+        <img src="img/photo-client-1-desktop@1px.png" alt="Фотография клиента" width="80" height="80">
+        <aside class="comments__wrap">
+          <p class="comments__name">Анна Орлова</p>
+          <p class="comments__text">«Хожу в SuperClub уже больше года. Нравится, что в клубе всегда чисто,
+            тренажеры обновляют, персонал
+            дружелюбный. Зал просторный, даже в вечернее время нет очередей»</p>
+        </aside>
+      </aside>
+    </div>
+  </div>
+</div>
+</section>
+
+$(document).ready(function () {
+    // первый слайдер с адаптивом
+    $('.multiple-items').slick({
+      arrows: true,
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      speed: 1000,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            initialSlide: 2
+          }
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            initialSlide: 2
+          }
+        }
+      ]
+    });
+    // тут второй слайдер
+    $('.comments__slider').slick({
+      arrows: true,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      speed: 1000
+    });
+  });
+  
+  .comments {
+    width: 100%;
+    background-color: $color-white;
+  }
+  
+  .comments__container {
+    min-width: 0;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 40px 0;
+    padding-bottom: 120px;
+    text-align: center;
+  
+    h2 {
+      margin: 0;
+      margin-bottom: 50px;
+      padding: 0;
+      font-family: $font-bebas-bold;
+      font-size: 49px;
+      line-height: 49px;
+      letter-spacing: 0.03em;
+    }
+  }
+  
+  .comments__slider {
+    position: relative;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .comments__slider-item {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 50px 60px;
+    padding-top: 55px;
+    width: 560px;
+    height: 242px;
+    display: flex;
+    color: $color-white;
+    background-color: $color-bg-blue;
+  
+    img {
+      margin-top: 5px;
+      margin-right: 30px;
+    }
+  }
+  
+  .comments__wrap {
+    width: 330px;
+    text-align: left;
+  }
+  
+  .comments__name {
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    font-family: $font-roboto-bold;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  
+  .comments__text {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  
+  .comments__slider .slick-list {
+    overflow: hidden;
+    width: 560px;
+  }
+  
+  .comments__slider .slick-track {
+    display: flex;
+    height: 242px;
+  }
+  
+  .comments__slider .slick-arrow {
+    @include button-reset;
+    position: absolute;
+    top: 45%;
+    z-index: 10;
+    font-size: 0;
+    outline: none;
+  }
+  
+  .comments__slider .slick-prev {
+    left: 21.5%;
+    width: 24px;
+    height: 24px;
+    border-top: 1px solid $color-arrow;
+    border-right: 1px solid $color-arrow;
+    transform: rotate(-135deg);
+  }
+  
+  .comments__slider .slick-next {
+    right: 21.5%;
+    width: 24px;
+    height: 24px;
+    border-top: 1px solid $color-arrow;
+    border-right: 1px solid $color-arrow;
+    transform: rotate(45deg);
+  }
