@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Btn</title>
+</head>
+
+<body>
+    <div class="container">
+        <ul>
+            <li><button class="active-btn" type="button">1 первая карта</button></li>
+            <li><button type="button">6 вторая карта</button></li>
+            <li><button type="button">12 третья карта</button></li>
+        </ul>
+        <div class="tab-content active-content" data-tab="0">
+            <ul>
+                <div class="card card--active"><a class="link link--active" href="#">Купить</a><span>1000</span></div>
+                <div class="card"><a class="link" href="#">Купить</a><span>2000</span></div>
+                <div class="card"><a class="link" href="#">Купить</a><span>3000</span></div>
+            </ul>
+        </div>
+        <div class="tab-content" data-tab="1">
+            <ul>
+                <div class="card card--active"><a class="link link--active" href="#">Купить</a><span>1000</span></div>
+                <div class="card"><a class="link" href="#">Купить</a><span>3000</span></div>
+            </ul>
+        </div>
+        <div class="tab-content" data-tab="2">
+            <ul>
+                <div class="card card--active"><a class="link link--active" href="#">Купить</a><span>1000</span></div>
+            </ul>
+        </div>
+    </div>
+
+    <style type="text/css">
+        .container {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 1000px;
+            margin: 0 auto;
+            list-style: none;
+        }
+
+        .card {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 400px;
+            width: 200px;
+            background-color: pink;
+        }
+
+        .link {
+            margin-bottom: 50px;
+            text-align: center;
+            color: pink;
+            text-decoration: none;
+            text-transform: uppercase;
+            height: 20px;
+            width: 70px;
+            background-color: white;
+        }
+
+        .active-btn {
+            border-bottom: 2px solid red;
+        }
+
+        .card--active {
+            border: 5px solid rgb(94, 19, 60);
+        }
+
+        .link--active {
+            background-color: rgb(184, 120, 173);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .active-content {
+            display: block;
+        }
+    </style>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
