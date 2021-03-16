@@ -1,0 +1,46 @@
+include ../base/mixins
+include ../base/header
+
+block variables
+
+doctype html
+html(lang="ru")
+  head
+    title= title
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="description", content="просто студия&nbsp;&mdash; сайты. приложения. брендинг")
+    link(rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png")
+    link(rel="manifest" href="img/favicon/site.webmanifest" crossorigin="use-credentials")
+    link(rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#da0052")
+    meta(name="msapplication-TileColor" content="#ffffff")
+    meta(name="theme-color" content="#ffffff")
+    +link-font(["Ubuntu-Light", "Ubuntu-Regular", "Ubuntu-Medium", "Ubuntu-Bold"])
+    link(rel="stylesheet", href="css/style.min.css")
+
+  body
+    +sprite()
+
+    //- модальные окна для страницы
+    include ../blocks/mobile-menu
+    include ../blocks/modal-project
+    include ../blocks/modal-success
+
+    //- если нужен header c fullpage
+    if (hasHeader)
+      +header("main")
+    //- если нужен обычный header
+    if (hasHeaderNoFullpage)
+      +header("other")
+
+    //- контенет страницы
+    block main
+
+    if (hasFooter)
+      include ../base/footer
+
+    script(src="js/vendor.min.js")
+    script(src="js/main.min.js")

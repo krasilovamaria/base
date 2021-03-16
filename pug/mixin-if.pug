@@ -1,0 +1,7 @@
+mixin header(pages)
+  header.header
+    if pages === "main"
+      a.header__logo(href="main.html#services")
+        +img("img-white", "content", "logo-white", "png", 205, 48, "Логотип")
+    if pages === "other"
+      a.header__logo(href="main.html")

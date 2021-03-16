@@ -1,0 +1,38 @@
+-
+  var flat = [
+    {"title": "Тип сделки", "value": "Продажа"},
+    {"title": "Тип объекта", "value": "Квартира"},
+    {"title": "Этаж", "value": "3"},
+    {"title": "Уровней", "value": "1"},
+    {"title": "Отделка", "value": "Да"},
+    {"title": "Меблировка", "value": "Да"},
+    {"title": "Спален:", "value": "2"},
+    {"title": "Комнат:", "value": "4"},
+    {"title": "Санузлы:", "value": "2"},
+    // обрати внимание "value": "182&nbsp;м<sup>2</sup>"
+    // а при передаче нужен "!=" вот так span.details__value!= item.value
+    {"title": "Площадь:", "value": "182&nbsp;м<sup>2</sup>"}
+  ]
+-
+  var house = [
+    {"title": "Тип сделки", "value": "Продажа"},
+    {"title": "Тип объекта", "value": "Квартира"},
+    {"title": "Этаж", "value": "3"},
+    {"title": "Уровней", "value": "1"},
+    {"title": "Отделка", "value": "Да"},
+    {"title": "Меблировка", "value": "Да"},
+    {"title": "Спален:", "value": "2"}
+  ]
+-
+  var location = [
+    {"title": "Тип сделки", "value": "Продажа"},
+    {"title": "Тип объекта", "value": "Квартира"},
+    {"title": "Этаж", "value": "3"},
+  ]
+
+section.container.details
+  h2.visually-hidden Списки с подробным описанием объекта
+  .details__wrap
+    +details('О квартире', flat)
+    +details('О доме', house)
+    +details('Расположение', location)

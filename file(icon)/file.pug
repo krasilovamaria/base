@@ -1,0 +1,11 @@
+//- обрати внианиме на атрибут у формы enctype="multipart/form-data", он нужен для file
+form.modal-project__form(method="post", action="#", enctype="multipart/form-data")
+  .file
+    .file__box
+      .file__btn
+        label(for="upload-file")
+          span.file__add-text Прикрепить файл
+        input(id="upload-file", type="file", name="upload-file", multiple)
+    p.file__text.js-btn-file-text Прикрепите любые файлы, которые помогут нам понять задачу
+  .file-icon-box
+        

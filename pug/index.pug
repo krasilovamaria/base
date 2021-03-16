@@ -1,0 +1,82 @@
+extends ../base/layout
+
+block variables
+  - var title = "Оглавление"
+  - var hasHeader = false
+  - var hasHeaderNoFullpage = false
+  - var hasFooter = false
+  - var hasFullpage = false
+
+block main
+  style.
+    body {
+      background: linear-gradient(180deg, #da0052 0%, #5f00bd 100%);
+    }
+
+    .container {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    h1 {
+      font-size: 32px;
+      line-height: 40px;
+      color: #ffffff;
+    }
+
+    a {
+      color: #ffffff;
+    }
+
+    li {
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 7px;
+      color: #ffffff;
+    }
+
+    img {
+      width: 100%;
+      max-width: 205px;
+      height: auto;
+      display: block;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 768px) {
+      ol {
+        padding-left: 20px;
+      }
+
+      ol li {
+        margin-bottom: 15px;
+      }
+
+      .container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+    }
+
+  -
+    var pages = [
+      {
+        name: "Компоненты для переиспользования - ui-kit.html",
+        src: "ui-kit.html"
+      },
+      {
+        name: "Главная - main.html",
+        src: "main.html"
+      },
+      {
+        name: "404 страница - 404.html",
+        src: "404.html"
+      },
+    ]
+  main.container.main-index
+    img(src="img/content/logo-white.png" width="205" alt="Логотип просто студия")
+    h1 Список страниц и компонентов
+    ol
+      each page in pages
+        li
+          a(href= page.src)= page.name

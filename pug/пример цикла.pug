@@ -1,0 +1,10 @@
+mixin details(title, list)
+  .details__box
+    a.details__title.button.dropdown-lists-button(aria-label="Войти", tabindex="0")
+      +icon('icon-bookmark', 10, 14)
+      span= title
+    ul.details__list.dropdown-lists-content
+      each item in list
+        li.details__item
+          span.details__title-dotted= item.title
+          span.details__value!= item.value

@@ -1,0 +1,259 @@
+.file {
+  margin-bottom: 51px;
+
+  display: flex;
+  flex-direction: row;
+
+  @include viewport--lg {
+    margin-bottom: 16px;
+  }
+
+  @include viewport--md {
+    margin-bottom: 6px;
+    flex-direction: column;
+  }
+}
+
+.file__box {
+  @include viewport--md {
+    margin: 0;
+    margin-top: 3px;
+    margin-bottom: 10px;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.file__btn {
+  position: relative;
+  min-height: 37px;
+  width: 191px;
+
+  margin: 0;
+  margin-left: 5px;
+  margin-right: 25px;
+
+  border-radius: 40px;
+  color: $color-dark-magenta;
+  cursor: pointer;
+
+  @include viewport--md {
+    margin: 0;
+  }
+
+  label {
+    display: block;
+    text-align: center;
+
+    width: 100%;
+    height: 100%;
+
+    cursor: pointer;
+    z-index: 500;
+  }
+
+  span {
+    padding: 8px 5px;
+
+    font-size: 14px;
+    line-height: 20px;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  input {
+    padding: 0;
+    margin: 0;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 191px;
+    height: 37px;
+    opacity: 0;
+  }
+
+  input[type="file"],
+  input[type="file"]::-webkit-file-upload-button {
+    padding: 0;
+    margin: 0;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 191px;
+    height: 37px;
+    font-size: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+}
+
+.file-icon-box {
+  padding-left: 3px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  @include viewport--lg {
+    margin-bottom: 14px;
+  }
+}
+
+.file__icon-item {
+  padding: 0;
+  padding-top: 83px;
+  margin: 0;
+  margin-right: 10px;
+  margin-bottom: 10px;
+
+  position: relative;
+  width: 123px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $color-default-white;
+    z-index: 2;
+    border-radius: 8px;
+  }
+
+  &::after {
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    background: $razzmatazz-to-purple-heart-transparent;
+    content: "";
+    z-index: -1;
+    border-radius: 8px;
+  }
+
+  .file__icon-btn {
+    width: 18px;
+    height: 18px;
+
+    position: absolute;
+    top: 6%;
+    left: 83%;
+
+    z-index: 2;
+
+    &::before {
+      width: 18px;
+      top: 6px;
+    }
+
+    &::after {
+      width: 18px;
+      top: 6px;
+    }
+  }
+
+  .file__item-type {
+    position: absolute;
+    bottom: 59px;
+    left: 31%;
+
+    width: 24px;
+    height: 13px;
+
+    display: inline-block;
+    vertical-align: middle;
+
+    font-size: 10px;
+    line-height: 11px;
+    text-align: center;
+    color: $color-default-white;
+    background: $razzmatazz-to-purple-heart;
+    z-index: 150;
+
+    &::before {
+      position: absolute;
+      bottom: -29px;
+      left: 27%;
+      content: "";
+      width: 42px;
+      height: 51px;
+      background-image: url('../img/svg/file.svg');
+      z-index: 200;
+    }
+  }
+
+  .file__item-name {
+    padding: 3px;
+    padding-left: 5px;
+    position: relative;
+
+    display: inline-block;
+    vertical-align: middle;
+
+    max-width: 110px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-size: 16px;
+    line-height: 18px;
+    background: $razzmatazz-to-purple-heart-transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+
+    z-index: 151;
+  }
+}
+
+.file__text {
+  margin: 0;
+  padding: 0;
+
+  height: 100%;
+  width: 310px;
+  z-index: 500;
+
+  font-size: 18px;
+  line-height: 21px;
+
+  background: $razzmatazz-to-purple-heart-transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @include viewport--lg {
+    width: 100%;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  @include viewport--sm {
+    width: 241px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  // для iphone 5/se
+  @media (max-width: 350px) {
+    display: none;
+  }
+}
+
+.file__add-text-large {
+  width: 190px;
+}
