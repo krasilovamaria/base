@@ -1,0 +1,20 @@
+.main-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 87.5%;
+}
+
+.main-nav__search {
+  width: 100%;
+
+  input {
+    width: 100%;
+    color: $color-matterhorn;
+
+    &::placeholder {
+      color: $color-matterhorn;
+    }
+  }
+}

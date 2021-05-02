@@ -1,0 +1,51 @@
+mixin header(headerMod, currentPage)
+  -
+    var headerLinks = [
+      {
+        href: "#",
+        text: "Страница 1"
+      },
+      {
+        href: "#",
+        text: "Страница 2"
+      },
+      {
+        href: "#",
+        text: "Страница 3"
+      },
+    ]
+
+  header(class=(headerMod) ? "header header--" + headerMod : "header")
+    .header__wrapper
+
+      // Icons
+      .header__icon-wrapper
+        if(currentPage === "main")
+          a.header__logo
+            img(src="img/svg/logo.svg", alt="Логотип")
+        else
+          a.header__logo(href="main.html", aria-label="Переход на главную")
+            img(src="img/svg/logo.svg", alt="Логотип")
+
+        a.header__logo(href="https://www.mvideo.ru", aria-label="Мвидео")
+          img(src="img/svg/logo-mvideo.svg", alt="Логотип")
+
+      nav.main-nav
+        // Поиск
+        form.main-nav__search(action="#", method="post")
+          input(id="search-input", type="text", placeholder="Название курса в одну строку", aria-label="Поиск", name="search", tabindex="0")
+          label.visually-hidden(for="search-input")
+          button.visually-hidden(type="button")
+
+        button.btn-reset.btn.btn-burger.main-nav__burger(type="button", aria-label="Переключатель отображения меню")
+          +icon("icon-burger", 24, 16)
+
+        .visually-hidden.main-nav__wrapper
+          ul.main-nav__list
+            each link, index in headerLinks
+              if(index === currentPage)
+                li
+                  a.main-nav__link.main-nav__link--active=link.text
+              else
+                li
+                  a.main-nav__link(href=link.href)=link.text

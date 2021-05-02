@@ -1,0 +1,70 @@
+extends ../base/layout
+
+block data
+  include ../data/placeholder
+
+block variables
+  - var title = "ProjectName — Главная"
+  - var wrapperMod = ""
+  - var hasHeader = true
+  - var headerMod = ""
+  - var hasFooter = true
+  - var footerMod = ""
+  - var currentPage = "main" //- для остальных страниц пишем либо пустую строку, либо индекс
+
+block main
+  main
+    .container
+      //
+      section.row.main-title
+        h1.visually-hidden Курсы Eldorado
+        p Еще больше возможностей
+
+      //
+      section.row.new-design
+        h2.title Новый дизайн
+
+        ul.new-design__list
+
+          li.new-design__item.new-design__item--bg
+            +img("content", "banner-galaxy-s10", "png", 162, 112, "Баннер Galaxy s10")
+            p Абсолютно новый Infinity-O экран — на передней стороне смартфона нет ничего, кроме огромного экрана и фронтальной камеры.
+
+          li.new-design__item
+            +img("content", "s10", "png", 154, 180, "Galaxy s10")
+            p Для любителей роскоши, модель S10+ будет выпускаться в керамическом корпусе черного и белого цветов.
+
+          li.new-design__item
+            +img("content", "colours-s10", "png", 60, 60, "Палитра цветов")
+            p Смартфоны доступны в 4х стильных цветах: Перламутр, Аквамарин, Оникс и Цитрус (для S10e).
+          li.new-design__item
+            +img("content", "gorilla-glass", "png", 60, 60, "Баннер Galaxy s10")
+            p В моделях S10 и S10+ установлены защитные стекла нового поколения – Gorilla Glass 6.
+
+      //
+      section.row.scan
+        h2.title Сканер отпечатка в экране
+
+        .scan__wrapper
+
+          +img("content", "mobile", "jpg", 465, 248, "Телефон")
+
+          ul.scan__list
+            li.scan__item
+              +icon("icon-video", 46, 46)
+              p Отличное качество съемки новых поколениесмартфонов Samsung позволит создать и смотреть праздники, семейные торжества и памятные моменты на огромном экране, с яркими, живыми цветами и прекрасной детализацией.
+
+            li.scan__item
+              +icon("icon-stabilization", 60, 60)
+              p Дополнительная система стабилизации сделает видеоролики плавными и красивыми.
+
+            li.scan__item
+              +icon("icon-slow-time", 60, 60)
+              p Сверхзамедленная съемка (960 кадров в секунду) теперь в 2 раза дольше. Камера в S10 способна распознать  самое стремительное движение, такое как языки пламени, брызги воды, дым из под колес спорткара.
+      //
+      section.row.new-design
+        h2.title Аксессуары
+
+      //
+      section.row.new-design
+        h2.title Приложения и сервисы Samsung
